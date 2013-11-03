@@ -5,11 +5,13 @@ require 'sinatra'
 require 'dwolla'
 
 # Include any required keys
-require './_keys.rb'
+require './keys.rb'
 
 # Instantiate a new Dwolla User client
 Dwolla::api_key = @api_key
 Dwolla::api_secret = @api_secret
+Dwolla::sandbox = true
+Dwolla::debug = true
 
 # Constants...
 redirect_uri = 'http://localhost:4567/oauth_return'
