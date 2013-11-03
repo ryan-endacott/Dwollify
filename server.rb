@@ -14,6 +14,10 @@ before do
   end
 end
 
+get '/' do
+  "Dwollify!!!"
+end
+
 post '/dwollify' do
   Dwolla::Transactions.send({
     :destinationId => params[:email],
